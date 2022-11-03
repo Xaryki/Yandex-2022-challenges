@@ -14,19 +14,17 @@ for i in range(q):
     elif temp[0] == "GETMAX":
         get_max = -9223372036854775807
         maxim = {}
-        for key, values in datacenter.items():
-            if R[key] * sum(values) > get_max:
-                maxim[R[key] * sum(values)] = key
-                get_max = R[key] * sum(values)
+        for key, items in datacenter.items():
+            if R[key] * sum(items) > get_max:
+                maxim[R[key] * sum(items)] = key
+                get_max = R[key] * sum(items)
+        print(maxim[get_max])
 
-        print(min(datacenter.keys()))
-        break
-    """elif temp[0] == "GETMIN":
+    elif temp[0] == "GETMIN":
         get_min = 9223372036854775807
         mixim = {}
         for key, items in datacenter.items():
             if R[key] * sum(items) < get_min:
                 mixim[R[key] * sum(items)] = key
                 get_min = R[key] * sum(items)
-        print(mixim[get_min])"""
-
+        print(mixim[get_min])
